@@ -1,0 +1,10 @@
+colour(cherry, red).
+colour(banana, yellow).
+colour(apple, green).
+colour(orange, orange).
+colour(grape, black).
+fruit(red, cherry).
+fruit(yellow, banana).
+fruit(green, apple).
+fruit(orange, orange).
+fruit(black, grape).
