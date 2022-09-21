@@ -1,0 +1,163 @@
+print("\n GAME STARTS ")
+
+print("\n Now the task is to move all 3 cannibals and 3 missionaries from left to right  ")
+
+print("\n the boat can carry 2 people at a time ")
+
+print("\n If the cannibal value is greater than missionaries then the cannibal eat the massionaries ")
+
+print("\n the boat cannot move other side without a people ")
+
+lm = 3
+
+lc = 3
+
+rM = 0
+
+rC = 0
+
+userM = 0
+
+userC = 0
+
+k=0
+
+print("\n C C C M M M |...........|           \n")
+
+try:
+
+    while(True):
+
+        while(True):
+
+            print("Left side -> right side of the river ")
+
+            uM = int(input("enter the number of missionaries travel -> : "))
+
+            uC = int(input("enter the nuumber of cannibals travel -> : "))
+
+            if((uM==0) and (uC==0)):
+
+                print("Empty travel is not possible ")
+
+                print("re-emter the value : ")
+
+            elif(((uM+uC)<= 2 )and((lm-uM)>=0) and ((lc-uC)>=0)):
+
+                break
+
+            else:
+
+                print("Wrong input re enter the number : ")
+
+        lm = (lm-uM)
+
+        lc = (lc-uC)
+
+        rM += uM
+
+        rC += uC
+
+        print("\n")
+
+        for i in range(0,lm):
+
+            print("M ",end=" ")
+
+        for i in range(0,lc):
+
+            print("C ",end=" ")
+
+        print(" | -->  | ",end=" ")
+
+        for i in range(0,rM):
+
+            print("M ",end=" ")
+
+        for i in range(0,rC):
+
+            print("C ",end=" ")
+
+        print("\n ")
+
+        k +=1
+
+        if(((lc==3) and lm==1)) or ((lc==3)and ((lm==2 ) and (lm==1)) or ((rC==3 )and (rM==1)) or ((rC==3)and (rM==2 )or (rC==2) and (rM==1))):
+
+            print("cannibals eat missinories : \n you lost the game ")
+
+            break
+
+        if((rM+rC)==6):
+
+            print("\n ypu won the game , \n congrats" )
+
+            print("total attempts :")
+
+            print(k)
+
+            break
+
+        while(True):
+
+            print("right side -> left side river travel ")
+
+            userM=int(input("enter the number of missionaries : "))
+
+            userC= int(input("enter the number of cannibals : "))
+
+            if((userM==0)and(userC==0)):
+
+                print("Empty travel not possible ")
+
+                print("re enter the number : ")
+
+            elif(((userM+userC)<=2 )and( (rM-userM)>=0) and((rC-userC)>=0)):
+
+                break
+
+            else:
+
+                print("wron input re enter the number : ")
+
+        lm +=userM
+
+        lc +=userC
+
+        rM -=userM
+
+        rC -= userC
+
+        k+=1
+
+        print("\n")
+
+        for i in range(0,lm):
+
+            print("M ",end=" ")
+
+        for i in range(0,lc):
+
+            print("C ",end=" ")
+
+        print("| <-- | ",end=" ")
+
+        for i in range(0,rM):
+
+            print("M ",end=" ")
+
+        for i in range(0,rC):
+
+            print("C ",end=" ")
+
+        print("\n")
+
+        if (((lc == 3) and lm == 1)) or ((lc == 3) and ((lm == 2) and (lm == 1)) or ((rC == 3) and (rM == 1)) or ((rC == 3) and (rM == 2) or (rC == 2) and (rM == 1))):
+
+            print("cannibals eat missinories : \n you lost the game ")
+
+            break
+
+except EOFError as e:
+
+    print("\n invalid input ")
